@@ -1,1 +1,1 @@
-Scrathpad for Python based solutions for interesting CP problems
+Scratchpad for Python based solutions for interesting CP problems
