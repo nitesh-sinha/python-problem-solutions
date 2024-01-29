@@ -36,7 +36,7 @@ from heapq import heappop, heappush, heapify
 
 class MergeKSorted:
     def merge(self, lists: list[ListNode]) -> ListNode:
-        min_heap = [(list.val, list) for list in lists if list]
+        min_heap = [(lst.val, lst) for lst in lists if lst]
         heapify(min_heap)
 
         dummy = ListNode(0)
