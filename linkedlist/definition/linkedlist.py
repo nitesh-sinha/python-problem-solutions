@@ -3,6 +3,12 @@ class ListNode:
         self.val = val
         self.next = next
 
+    # Needed to compare two ListNode objects, example when
+    # adding them to a min heap. Check usage in
+    # merge_k_sorted.py
+    def __lt__(self, other):
+        return self.val < other.val
+
 
 class LinkedList:
     def __init__(self):
@@ -21,8 +27,11 @@ class LinkedList:
         node = ListNode(num)
         ptr.next = node
 
-    def print_linked_list(self, input_head = None):
-        ptr = input_head if input_head else self.head
+    @classmethod
+    def print_linked_list(cls, input_head=None):
+        if not input_head:
+            raise "Head is empty. Can't print anything!"
+        ptr = input_head
         while ptr:
             print(ptr.val, end="->")
             ptr = ptr.next
@@ -35,4 +44,4 @@ if __name__ == "__main__":
     ll.add_element(2)
     ll.add_element(3)
     ll.add_element(4)
-    ll.print_linked_list()
+    LinkedList.print_linked_list(ll.head)

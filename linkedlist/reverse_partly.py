@@ -67,8 +67,8 @@ if __name__ == "__main__":
     ll.add_element(2)
     ll.add_element(3)
     ll.add_element(4)
-    ll.print_linked_list()
+    LinkedList.print_linked_list(ll.head)
     rev = Reverse()
     new_head = rev.reverseBetween(ll.head, 1,3)
-    ll.print_linked_list(new_head)
+    LinkedList.print_linked_list(new_head)
 
