@@ -3,9 +3,7 @@
 #
 # A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1
 # does not map to any letters.
-import time
-
-
+#
 # letter_map = {
 #             "2": "abc",
 #             "3": "def",
@@ -32,7 +30,6 @@ import time
 # Constraints:
 # 0 <= digits.length <= 4
 # digits[i] is a digit in the range ['2', '9'].
-
 
 class CombineLetters:
     def get_combo(self, digits: str) -> list[str]:
