@@ -34,7 +34,7 @@ class LongestPalindrome:
 
         for i in range(len(s)):
             # find both odd length and even length palindromes
-            # (even length palindrome calculationn is needed to account
+            # (even length palindrome calculation is needed to account
             # for these cases: s = "aaaab")
             odd_len_palin = expand_and_get_palindrome(i, i)
             even_len_palin = expand_and_get_palindrome(i, i + 1)
