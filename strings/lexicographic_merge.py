@@ -36,6 +36,8 @@
 # word1 and word2 consist only of lowercase English letters.
 
 # Time complexity: O(n^2) where n=length of larger string(string comparison after slicing in L45 takes O(n) also)
+
+
 class LexicographicMerge:
     def largestMerge(self, word1: str, word2: str) -> str:
         merge = []
