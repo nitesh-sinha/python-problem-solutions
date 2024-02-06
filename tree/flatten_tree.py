@@ -29,8 +29,6 @@
 # The number of nodes in the tree is in the range [0, 2000].
 # -100 <= Node.val <= 100
 
-
-
 from typing import Optional
 from definition.tree import TreeNode
 from btree_printer import BTreePrinter
