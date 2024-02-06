@@ -55,7 +55,7 @@ if __name__ == "__main__":
     root.right.left.right = TreeNode(-1)
 
     # Print the tree
-    BTreePrinter.print_node(root)
+    BTreePrinter.print_tree(root)
     traverser = ZigZagTraversal()
     print(traverser.traverse(root))
 
