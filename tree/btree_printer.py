@@ -74,13 +74,13 @@ class BTreePrinter:
 
 
 if __name__ == "__main__":
-    root = TreeNode(1)
-    root.left = TreeNode(2)
-    root.right = TreeNode(3)
-    root.left.left = TreeNode(4)
-    root.left.right = TreeNode(5)
-    root.right.left = TreeNode(6)
+    root = TreeNode(-10)
+    root.left = TreeNode(9)
+    root.right = TreeNode(20)
+    # root.left.left = TreeNode(4)
+    # root.left.right = TreeNode(5)
+    root.right.left = TreeNode(15)
     root.right.right = TreeNode(7)
 
     # Print the tree
-    BTreePrinter.print_node(root)
+    BTreePrinter.print_tree(root)
