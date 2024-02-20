@@ -12,7 +12,7 @@ class MHT:
             adj_list.get(edge_start).add(edge_end)
             adj_list.get(edge_end).add(edge_start)
         leaves = [node for node, neighbours in adj_list.items() if len(neighbours) == 1]
-        while len(adj_list) > 2:
+        while len(adj_list) > 2: # Atleast 2 nodes remain
             new_leaves = []
             for leaf in leaves:
                 neighbour = adj_list.get(leaf).pop() # only 1 neighbour exists since its leaf node
