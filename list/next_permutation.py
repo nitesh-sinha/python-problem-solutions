@@ -64,7 +64,7 @@ class NextPermutation:
             return
 
         # Find smallest rightmost element in suffix which is larger than pivot
-        pivot_succ = 99999999999 # some large number
+        pivot_succ = float('inf')
         pivot_succ_indx = -1
         for i in range(nums_len - 1, pivot, -1):
             if nums[pivot] < nums[i] < pivot_succ:
@@ -76,3 +76,12 @@ class NextPermutation:
 
         # reverse the suffix
         nums[pivot + 1:] = nums[pivot + 1:][::-1]
+
+
+if __name__ == "__main__":
+    np = NextPermutation()
+    #input = [1,2,3]
+    #input = [1, 1, 5]
+    input = [3,2,1]
+    np.get_next(input)
+    print(input)
