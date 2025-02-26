@@ -1,6 +1,6 @@
 from typing import Optional
-from tree.definition.tree import TreeNode
-from tree.btree_printer import BTreePrinter
+from source.tree.definition.tree import TreeNode
+from source.tree.btree_printer import BTreePrinter
 
 
 class BSTCreator:

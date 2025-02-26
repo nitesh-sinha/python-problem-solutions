@@ -13,7 +13,7 @@
 # Output: [[15,7], [9,20], [-10]]
 
 from typing import Optional
-from tree.definition.tree import TreeNode
+from source.tree.definition.tree import TreeNode
 
 
 class ReverseTraversal:

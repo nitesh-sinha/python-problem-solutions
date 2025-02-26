@@ -17,7 +17,7 @@
 #Explanation: All root - to - leaf paths are: 1->2->5, 1->3
 
 from typing import Optional
-from tree.definition.tree import TreeNode
+from source.tree.definition.tree import TreeNode
 
 
 class PathsGetter:

@@ -1,4 +1,19 @@
-from list.merged_intervals import IntervalsMerger
+# Given a sorted list of non-overlapping intervals, implement a function to insert a new interval into the list while maintaining order and merging any overlapping intervals.
+#
+# Input:
+# intervals: A list of non-overlapping intervals represented as [start, end], sorted in ascending order based on the start value.
+# newInterval: A single interval [start, end] to be inserted.
+#
+# Output:
+# A new list of intervals where the newInterval has been inserted and merged with any overlapping intervals.
+#
+# Constraints:
+# - The function should efficiently find the correct insertion point and merge overlapping intervals.
+# - The solution should preserve the order of the intervals.
+#
+# Time Complexity: O(n)
+# Space complexity: O(1)
+
 
 class InsertIntervals:
     def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
@@ -54,3 +69,5 @@ if __name__ == "__main__":
 #                 high = mid
 #
 #         return low
+
+

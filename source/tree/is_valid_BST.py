@@ -9,7 +9,7 @@
 # Both the left and right subtrees must also be binary search trees.
 
 
-from tree.definition.tree import TreeNode
+from source.tree.definition.tree import TreeNode
 from typing import Optional
 
 # Time complexity: O(n)

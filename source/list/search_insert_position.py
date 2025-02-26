@@ -41,4 +41,3 @@ class Search:
             return lo
 
         return 1 + lo
-

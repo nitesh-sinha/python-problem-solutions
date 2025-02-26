@@ -21,7 +21,7 @@
 
 # Time complexity: O(n) where n=number of nodes in linked list
 
-from linkedlist.definition.linkedlist import ListNode
+from source.linkedlist.definition.linkedlist import ListNode
 from typing import Optional
 
 

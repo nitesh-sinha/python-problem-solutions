@@ -26,7 +26,6 @@
 
 import math
 
-
 class KthFactor:
     def get_factor(self, n: int, k: int) -> int:
         sqrt_n = math.sqrt(n)
@@ -43,9 +42,16 @@ class KthFactor:
         for i in range(math.floor(sqrt_n), 0, -1):
             if n % i == 0:
                 if k == 1:
-                    return int(n / i)
+                    return int(n / i) # to avoid displaying ".0"
                 else:
                     k = k - 1
         # k factors of n don't exist
         return -1
+
+
+if __name__ == "__main__":
+    x = KthFactor()
+    print(x.get_factor(12, 3))
+    print(x.get_factor(7, 2))
+    print(x.get_factor(4, 4))
 
