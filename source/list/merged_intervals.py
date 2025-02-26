@@ -28,7 +28,7 @@ class IntervalsMerger:
 
         merged_intervals = []
         intervals.sort() # sorts in ascending order of first element of each interval(default behavior)
-        # intervals.sort(key=lambda x: x[1]) # sorts in descending order of 2nd element of each interval
+        # intervals.sort(key=lambda x: x[1]) # sorts in ascending order of 2nd element of each interval
         (start1, end1) = intervals[0]
         for cur_interval in intervals[1:]:
             start2, end2 = cur_interval

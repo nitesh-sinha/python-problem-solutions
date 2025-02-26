@@ -29,8 +29,10 @@ class Permute:
 
     def get_permutations(self, nums, temp, res):
         if len(temp) == len(nums):
-            res.append(
-                temp.copy())  # save a copy of temp to avoid changes to the saved list in subsequent processing of temp
+            # save a copy of temp to avoid
+            # changes to the saved list in
+            # subsequent processing of temp
+            res.append(temp.copy())
             return
 
         for num in nums:
