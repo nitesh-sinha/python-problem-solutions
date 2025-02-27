@@ -36,17 +36,17 @@ from heapq import heappop, heappush, heapify
 
 class MergeKSorted:
     def merge(self, lists: list[ListNode]) -> ListNode:
-        min_heap = [(lst.val, lst) for lst in lists if lst]
+        min_heap = [lst for lst in lists if lst]
         heapify(min_heap)
 
         dummy = ListNode(0)
         tail: ListNode = dummy
         while min_heap:
-            (val, node) = heappop(min_heap)
+            node = heappop(min_heap)
             tail.next = node
             tail = tail.next
             if node.next:
-                heappush(min_heap, (node.next.val, node.next))
+                heappush(min_heap, node.next)
 
         return dummy.next
 
@@ -63,6 +63,13 @@ if __name__ == "__main__":
     ll2.add_element(3)
     ll2.add_element(6)
     ll2.add_element(8)
+
+    ll3 = LinkedList()
+    ll3.add_element(-1)
+    ll3.add_element(0)
+
     merger = MergeKSorted()
-    merged_head = merger.merge([ll1.head, ll2.head])
+    merged_head = merger.merge([ll1.head, ll2.head, ll3.head])
+    #merged_head = merger.merge([])
+
     LinkedList.print_linked_list(merged_head)

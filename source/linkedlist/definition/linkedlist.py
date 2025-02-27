@@ -1,13 +1,4 @@
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    # Needed to compare two ListNode objects, example when
-    # adding them to a min heap. Check usage in
-    # merge_k_sorted.py
-    def __lt__(self, other):
-        return self.val < other.val
+from source.linkedlist.definition.listnode import ListNode
 
 
 class LinkedList:
@@ -24,8 +15,7 @@ class LinkedList:
         while ptr.next:
             ptr = ptr.next
         # ptr is at end of linked list
-        node = ListNode(num)
-        ptr.next = node
+        ptr.next = ListNode(num)
 
     @classmethod
     def print_linked_list(cls, input_head=None):
