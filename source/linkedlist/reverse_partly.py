@@ -22,10 +22,8 @@ from definition.linkedlist import LinkedList, ListNode
 
 
 class Reverse:
-    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
-        if not head:
-            return None
-        if left == right:
+    def reverse_between(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+        if not head or left == right:
             return head
 
         # Get pointers to left and right nodes
@@ -69,6 +67,6 @@ if __name__ == "__main__":
     ll.add_element(4)
     LinkedList.print_linked_list(ll.head)
     rev = Reverse()
-    new_head = rev.reverseBetween(ll.head, 1,3)
+    new_head = rev.reverse_between(ll.head, 1,3)
     LinkedList.print_linked_list(new_head)
 

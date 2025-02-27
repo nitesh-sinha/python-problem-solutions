@@ -35,11 +35,5 @@ if __name__ == "__main__":
     ll.add_element(4)
     LinkedList.print_linked_list(ll.head)
     r = Rotator()
-    # new_head = r.rotateRight(ll.head, 3)
-    # LinkedList.print_linked_list(new_head)
-
-    new_head = r.rotateRight(ll.head, 4)
+    new_head = r.rotateRight(ll.head, 2)
     LinkedList.print_linked_list(new_head)
-
-    # new_head = r.rotateRight(ll.head, 0)
-    # LinkedList.print_linked_list(new_head)
