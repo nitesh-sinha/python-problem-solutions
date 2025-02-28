@@ -8,3 +8,6 @@ class ListNode:
     # merge_k_sorted.py
     def __lt__(self, other: "ListNode") -> bool:
         return self.val < other.val
+
+    # def get_val(self):
+    #     return self.val

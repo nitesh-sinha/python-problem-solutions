@@ -41,12 +41,12 @@ class MergeKSorted:
 
         dummy = ListNode(0)
         tail: ListNode = dummy
-        while min_heap:
+        while min_heap: # this loop runs O(N) times where N is total number elements in all linked lists
             node = heappop(min_heap)
             tail.next = node
             tail = tail.next
             if node.next:
-                heappush(min_heap, node.next)
+                heappush(min_heap, node.next) # This is O(log K) operation where K is no. of elements in heap
 
         return dummy.next
 
