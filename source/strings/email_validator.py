@@ -2,9 +2,8 @@
 # Your task is to find the unique e-mail addresses present in the text.
 # You could use Regular Expressions to simplify your task.
 # And remember that the "@" sign can be used for a variety of purposes!
-# Requirements are simplified versus real world.
-# There can be a number of strings separated by dots before and after the "@" symbol.
-# Strings will be made up of characters in the ranges a-z, A-Z, 0-9, _ (underscore).
+# Email address can have a number of characters(in the ranges a-z, A-Z, 0-9, _ (underscore).)
+# separated by dots before and after the "@" symbol.
 #
 # Input Format:
 # ------------

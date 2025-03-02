@@ -1,5 +1,5 @@
-# You are given two strings word1 and word2. You want to construct a string merge in the following way: while
-# either word1 or word2 are non-empty, choose one of the following options:
+# You are given two strings word1 and word2. You want to construct a string merge in the following way:
+# while either word1 or word2 are non-empty, choose one of the following options:
 #
 # If word1 is non-empty, append the first character in word1 to merge and delete it from word1.
 # For example, if word1 = "abc" and merge = "dv", then after choosing this operation, word1 = "bc" and merge = "dva".
@@ -7,8 +7,8 @@
 # For example, if word2 = "abc" and merge = "", then after choosing this operation, word2 = "bc" and merge = "a".
 # Return the lexicographically largest merge you can construct.
 #
-# A string a is lexicographically larger than a string b (of the same length) if in the first position where a and
-# b differ, a has a character strictly larger than the corresponding character in b.
+# A string "a" is lexicographically larger than a string "b" (of the same length) if in the first position where "a" and
+# "b" differ, "a" has a character strictly larger than the corresponding character in "b".
 # For example, "abcd" is lexicographically larger than "abcc" because the first position they differ is at the
 # fourth character, and d is greater than c.
 #
@@ -35,7 +35,7 @@
 # 1 <= word1.length, word2.length <= 3000
 # word1 and word2 consist only of lowercase English letters.
 
-# Time complexity: O(n^2) where n=length of larger string(string comparison after slicing in L45 takes O(n) also)
+# Time complexity: O(n^2) where n=length of larger string(string comparison after slicing in L47 takes O(n) also)
 
 
 class LexicographicMerge:
@@ -56,9 +56,15 @@ class LexicographicMerge:
 
         # Append remaining chars from larger string
         # to result
-        if idx1<len(word1):
-            merge.extend(word1[idx1:])
-        else:
-            merge.extend(word2[idx2:])
+        merge.extend(word1[idx1:] or word2[idx2:])
 
         return ''.join(merge)
+
+
+if __name__ == "__main__":
+    print(LexicographicMerge().largestMerge("cabaa", "bcaaa"))  # Output: "cbcabaaaaa"
+    print(LexicographicMerge().largestMerge("abcabc", "abdcaba"))  # Output: "abdcabcabcaba"
+    print(LexicographicMerge().largestMerge("a", "a"))  # Output: "aa"
+    print(LexicographicMerge().largestMerge("", "a"))  # Output: "a"
+    print(LexicographicMerge().largestMerge("", ""))  # Output: ""
+    print(LexicographicMerge().largestMerge("xyz", "abc"))  # Output: "xyzabc"
