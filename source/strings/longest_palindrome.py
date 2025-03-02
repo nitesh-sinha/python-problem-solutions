@@ -12,6 +12,8 @@
 # Constraints:
 # 1 <= s.length <= 1000
 # s consist of only digits and English letters.
+#
+# Time complexity: O(n^2) where n=length of input string
 
 class LongestPalindrome:
     def get_palindrome(self, s: str) -> str:
@@ -52,3 +54,24 @@ if __name__ == "__main__":
     print(lp.get_palindrome("a"))
     print(lp.get_palindrome(""))
     print(lp.get_palindrome("aaaab"))
+    print(lp.get_palindrome("abcd"))
+
+
+# Algorithm 2 (Time complexity: O(n^3) where n=length of given string):
+# def get_palindrome(self, s: str) -> str:
+#     for idx in range(len(s), 0, -1):
+#         # Extract idx length strings and check if its palindrome
+#         for start in range(len(s) - idx + 1):
+#             extracted_str = s[start: start+idx]
+#             if self.is_palindrome(extracted_str):
+#                 return extracted_str
+#
+# def is_palindrome(self, s: str) -> bool:
+#     start, end=0, len(s)-1
+#     while start < end:
+#         if s[start] != s[end]:
+#             return False
+#
+#         start+=1
+#         end-=1
+#     return True
