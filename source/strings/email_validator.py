@@ -26,13 +26,17 @@ class EmailValidator:
          # the full matched string, match group 1 will contain matched
          # string for the second parenthesis; similarly match-group 3 for
          # 3rd parenthesis
-         self.pattern = r'([a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*)'
+         self.pattern = r'([a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*@([a-zA-Z0-9_]+\.)+[a-zA-Z0-9_]+)'
 
      def grab_email_ids(self, text: str) -> str:
         match_groups = re.findall(self.pattern, text) # will return [(email1-match-group-0, email1-match-group-1, email1-match-group-2),
                                                       #              (email2-match-group-0, email2-match-group-1, email2-match-group-2)...]
-        emails = [group[0] for group in match_groups] # match[0] is full match
-        return ";".join(emails)
+        unique_emails = set()
+        for group in match_groups:
+            unique_emails.add(group[0])  # group[0] is full match
+        unique_emails = list(unique_emails)
+        unique_emails.sort()
+        return ";".join(unique_emails)
 
      # Solution 2(using re.finditer())
      # def grab_email_ids(self, text: str) -> str:
@@ -49,8 +53,10 @@ if __name__ == "__main__":
     This is a block of text with some email addresses.
     Email 1: user1@example.com and also user2@example.org.in, how about foo.bar.baz@xyz.co.jp
     Email 2: user2@email.org
+    Adding user2@email.org as a duplicate email for test
     Some more text here.
     Email 3: user3@gmail.com
+    adding some more email ids such as a@b.com, aaa@bb.in, cc.dd@x.y.z, not_valid_email@domain_without_dot
     '''
     validator = EmailValidator()
     print(validator.grab_email_ids(text))
