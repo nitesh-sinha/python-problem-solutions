@@ -24,17 +24,23 @@
 # 1 <= s.length <= 105
 # s consists of only English lowercase letters.
 
+# Time complexity: O(n) where n=length of input string
 
 class MinSubstrings:
-    def partitionString(self, s: str) -> int:
-        substr_chars = set()
+    def partition_string(self, s: str) -> int:
+        chars_seen = set()
         min_substrings = 1
         for char in s:
-            if char in substr_chars:
+            if char in chars_seen:
                 # Repeated char found
                 # Start a substring
                 min_substrings = min_substrings + 1
-                substr_chars = set()
-            substr_chars.add(char)
+                chars_seen.clear()
+            chars_seen.add(char)
         return min_substrings
 
+
+if __name__ == "__main__":
+    print(MinSubstrings().partition_string("abacaba")) # 4
+    print(MinSubstrings().partition_string("ssssss")) # 6
+    print(MinSubstrings().partition_string("abacd")) # 2
