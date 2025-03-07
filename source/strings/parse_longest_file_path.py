@@ -49,11 +49,13 @@
 # a dot '.', a space ' ', and digits.
 # All file and directory names have positive length.
 
+# Time complexity: O(n*d) where n=no. of files or dirs in filesystem, d=depth(no. of levels) of filesystem
+# Space complexity: O(d)
 
 class LongestFilePath:
-    def fetch(self, input: str) -> str:
+    def fetch(self, input: str) -> int:
         paths = input.split('\n')
-        stack = [""] # to store absolute dir names while traversing the input
+        stack = [""] # to store absolute dir names while traversing the input.
         # stores the longest path name of file(although for this specific question,
         # only storing counts would be enough)
         max_filename = ""
@@ -77,7 +79,8 @@ class LongestFilePath:
                 # its a dir, store the absolute dir name on stack
                 stack.append(stack[-1] + name + '/')
 
-        return max_filename
+        #print(max_filename)
+        return len(max_filename)
 
 
 if __name__ == "__main__":
@@ -91,5 +94,19 @@ if __name__ == "__main__":
         "dir\n\nsubdir"
     ]
     for input in inputs:
-        max_file_path = lfp.fetch(input)
-        print(max_file_path, "->", len(max_file_path))
+        max_file_path_len = lfp.fetch(input)
+        print(max_file_path_len)
+        print("===============")
+
+    # Outputs:
+    # 32
+    # == == == == == == == =
+    # 42
+    # == == == == == == == =
+    # 32
+    # == == == == == == == =
+    # 13
+    # == == == == == == == =
+    # 0
+    # == == == == == == == =
+    # 0
