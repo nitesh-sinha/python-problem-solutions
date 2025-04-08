@@ -23,5 +23,4 @@ class Sort:
 				result.append(idx + min_num) # Shift back to original value
 				count[idx] -= 1
 
-
 		return result
