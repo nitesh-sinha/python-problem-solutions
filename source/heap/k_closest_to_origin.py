@@ -40,6 +40,7 @@ class KClosestPointsToOrigin:
     #              Store the square of distance and index of each point as a tuple
     #              Time Complexity: O(n + k log n)
     #              Space comeplexity: O(n) for the heap
+    #
     # def kClosest(self, points: list[list[int]], k: int) -> list[list[int]]:
     #     dist_indices = [(points[idx][0]**2 + points[idx][1]**2, idx) for idx in range(len(points))]
     #     heapify(dist_indices) # O(n) time complexity
