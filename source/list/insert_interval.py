@@ -1,7 +1,10 @@
-# Given a sorted list of non-overlapping intervals, implement a function to insert a new interval into the list while maintaining order and merging any overlapping intervals.
+# Given a sorted list of non-overlapping intervals, 
+# implement a function to insert a new interval into the list while maintaining order 
+# and merging any overlapping intervals.
 #
 # Input:
-# intervals: A list of non-overlapping intervals represented as [start, end], sorted in ascending order based on the start value.
+# intervals: A list of non-overlapping intervals represented as [start, end], 
+# sorted in ascending order based on the start value.
 # newInterval: A single interval [start, end] to be inserted.
 #
 # Output:
