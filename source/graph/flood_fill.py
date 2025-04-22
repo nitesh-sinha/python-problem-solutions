@@ -52,6 +52,9 @@
 
 
 class Filler:
+    # Time and space complexity: O(m*n) where
+    # m = no. of rows in image
+    # n = no. of columns in image
     def floodFill(self, image: list[list[int]], sr: int, sc: int, color: int) -> list[list[int]]:
         rows = len(image)
         cols = len(image[0])
